@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akcja Ratunkowa: Michał</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Magiczna reguła, która zapobiega rozpychaniu kontenerów i ucinaniu tekstu na mobile */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            margin: 0;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 20px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+            overflow: hidden; /* Odcina elementy wychodzące poza ramy */
+        }
+
+        .glow-title {
+            font-size: 1.8em;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #ffb703;
+            text-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1em;
+            color: #ddd;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding: 0 5px;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Naprawione skalowanie zdjęcia pod telefony */
+        .image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid #ffb703;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+        .stats {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px 15px;
+            margin-top: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stats h2 {
+            font-size: 1em;
+            color: #aaa;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #222;
+            border-radius: 10px;
+            height: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 10%;
+            height: 100%;
+            background: linear-gradient(90deg, #fb8500, #ffb703);
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .counter {
+            font-size: 2em;
+            font-weight: 900;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        .status-critical {
+            display: block;
+            font-size: 0.45em;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            animation: blink 1.5s infinite;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            margin-bottom: 0;
+            font-size: 0.8em;
+            color: #777;
+            font-style: italic;
+            padding: 0 10px;
+            word-wrap: break-word; /* Wymusza łamanie długich tekstów */
+        }
+
+        /* --- MEDIA QUERIES (DLA TELEFONÓW) --- */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .card {
+                padding: 25px 15px; 
+            }
+            .glow-title {
+                font-size: 1.5em; 
+            }
+            .subtitle {
+                font-size: 0.95em;
+            }
+            .counter {
+                font-size: 1.7em;
+            }
+        }
+
+        /* --- ANIMACJE --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 class="glow-title">Uratuj Michała<br>przed trzeźwością!</h1>
+        
+        <p class="subtitle">
+            Tragedia wspomoż naszego pięknego chłopaka żeby ta piękna twarz sie nie zmieniała.
+        </p>
+
+        <div class="image-wrapper">
+            <img src="foto_michal.png" alt="Zdjęcie Michała">
+        </div>
+
+        <div class="stats">
+            <h2>Poziom nawodnienia organizmu</h2>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+
+            <h1 class="counter">
+                0 / 4 piwa
+                <span class="status-critical">Stan Krytyczny</span>
+            </h1>
+        </div>
+
+        <p class="footer-note">Zbiórka oficjalnie niezatwierdzona przez Ministerstwo Zdrowia. Pij odpowiedzialnie.</p>
+    </div>
+
+</body>
+</html>
